@@ -62,6 +62,43 @@ gsap.to("#line",{
       },
 })
 
-document.querySelectorAll(".elem").addEventListener("mouseenter",function (dets) {
-    console.log(dets);
+// document.querySelector(".logoflex").addEventListener("mousemove",function(dets){
+//     gsap.to("#leftinner",{
+//         x: dets.pageX - 900,
+//         y: dets.pageY - 450,
+//         delay:0.04
+//     })
+// })
+
+// document.querySelector(".logoflex").addEventListener("mousemove",function(dets){
+//     gsap.to("#bigS",{
+//         x: dets.pageX - 820,
+//         y: dets.pageY - 453,
+//     })
+// })
+
+// document.querySelector(".logoflex").addEventListener("mousemove",function(dets){
+//     gsap.to("#bigS",{
+//         x: dets.pageX - 820,
+//         y: dets.pageY - 453,
+//     })
+// })
+
+var tl = gsap.timeline()
+
+tl.to("#ctr",{
+    y:"-34%",
+    duration:0.8,
+    delay:1
 })
+.to("#ctr",{
+    y:"-=30%",
+    duration:0.8,
+    delay:0.4
+})
+.to("#ctr",{
+    y:"-=30%",
+    duration:0.8,
+    delay:0.4
+})
+

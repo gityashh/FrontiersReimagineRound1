@@ -10,6 +10,11 @@ html,body{
 }
 
 @font-face {
+    font-family: playwrite;
+    src: url(./PlaywriteGBS-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
     font-family: regular;
     src: url(./655bd67400b255b0a6b242f1_NeuePlak-Regular.woff2);
 }
@@ -24,13 +29,18 @@ html,body{
     src: url(./655bd674ef01791408322ebd_NeuePlak-SemiBold.woff2);
 }
 
+@font-face {
+    font-family: Avenir;
+    src: url(./AvenirLTStd-Roman.otf);
+}
+
 #loader{
     height: 100vh;
     width: 100vw;
     background-color: rgb(10, 10, 10);
     position: fixed;
     z-index: 90;
-    top: 0%;
+    top: -0%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -43,7 +53,6 @@ html,body{
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: aqua;
 }
 
 #leftinner{
@@ -53,8 +62,21 @@ html,body{
     transform: translate(-658% , 44%);
 }
 #rightlens{
-    transform: translate(-320% , -2%) rotate(15deg);
+    transform: translate(-318% , -3%) rotate(9deg);
 }
+#toplens{
+    transform: translate(-355% , -50%) rotate(-1deg);
+}
+#middle{
+    transform: translate(-810% , -190%);
+}
+#lefthand{
+    transform: translate(-3210% , -30%);
+}
+#righthand{
+    transform: translate(-2108% , -30%);
+}
+
 
 .loaderloader{
     height: 10vh;
@@ -99,7 +121,6 @@ html,body{
     padding: 3px 10px;
 }
 
-
 #main{
     width: 100vw;
     position: relative;
@@ -107,12 +128,12 @@ html,body{
 }
 
 nav{
-    height: 10vh;
+    height: 6vh;
     width: 100vw;
     position: absolute;
     z-index: 99;
     top: 0%;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0px 20px;
@@ -127,6 +148,8 @@ nav{
     align-items: center;
     overflow: hidden;
     font-family: regular;
+    position: relative;
+    cursor: pointer;
 }
 .navbutton h4{
     font-size: 0.9vw;
@@ -134,9 +157,32 @@ nav{
     font-weight: 100;
     padding-bottom: 5px;
 }
+#circle{
+    height: 130px;
+    width: 130px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    position: absolute;
+    top: 100%;
+    transition: ease 0.4s;
+    z-index: -99;
+}
+
+#navh4{
+    transition: ease-in .4s;
+}
+
+.navbutton:hover{
+    #circle{
+        top: -40%;
+    }
+    #navh4{
+        color: black;
+    }
+}
 
 #scroller{
-    width: 60vw;
+    width: 50vw;
     height: 100%;
     display: flex;
     align-items: center;
@@ -147,20 +193,21 @@ nav{
     font-family: Avenir;
     font-weight: 100;
     font-style: italic;
-    font-size: 1vw;
+    font-size: 0.9vw;
     color: white;
 }
 
 #scroller h4{
-    font-family: Snell roundhand;
-    font-weight: 100;
-    font-size: 1.3vw;
+    font-family: playwrite;
+    font-weight: 500;
+    font-size: 0.8vw;
+    font-style: italic;
     color: white;
 }
 
 #centernav{
     height: 100%;
-    width: 70%;
+    width: 60%;
     position: relative;
     display: flex;
     align-items: center;
@@ -186,17 +233,55 @@ nav{
 }
 
 .dotl{
-    height: 8px;
-    width: 8px;
+    height: 7px;
+    width: 7px;
     border-radius: 50%;
     background-color: white;
+    position: relative;
 }
 
 .dot{
-    height: 5px;
-    width: 5px;
+    height: 4px;
+    width: 4px;
     border-radius: 50%;
     background-color: white;
+    position: relative;
+}
+
+#biggerdot{
+    height: 0px;
+    width: 0px;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: ease 0.2s;
+    z-index: 30;
+}
+.second{
+    background-color: gray;
+}
+.third{
+    background-color: #C6B9B6;
+}
+.fourth{
+    background-color: #53375F;
+}
+.fifth{
+    background-color: blue;
+}
+.sixth{
+    background-color: #3A444A;
+}
+.seventh{
+    background-color: #871D34;
+}
+.eigth{
+    background-color: #21F0F7;
+}
+.ninth{
+    background-color: #4E3F40;
 }
 
 #carousel{
@@ -209,16 +294,39 @@ nav{
     position: relative;
     background: transparent;
 }
-#OTHER{
-    height: 100vh;
-    width: 100vw;
-    background-color: bisque;
-}
 
 #elems{
     height: 100%;
     width: max-content;
     display: flex;
+    position: relative;
+}
+
+.scroll{
+    position: absolute;
+    height: 40px ;
+    width: 160px;
+    background-color: rgba(0, 0, 0, 0.044);
+    backdrop-filter: blur(100px);
+    z-index: 100;
+    border-radius: 50px;
+    top: 30%;
+    left: 9.7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5px;
+    gap: 6px;
+    scale: 1;
+}
+.scroll h4{
+    font-family: regular;
+    color: white;
+}
+.scroll span{
+    display: inline-block;
+    font-size: 1.2vw;
+    color: white;
 }
 
 .elem{
@@ -249,7 +357,7 @@ nav{
     flex-direction: column;
     align-items: center;
     justify-content: end;
-    gap: 30%;
+    gap: 22%;
 }
 
 .centerV{
@@ -324,29 +432,64 @@ nav{
     transition: cubic-bezier(0.215, 0.610, 0.355, 1) .5s;
 }
 
-.n1::after{
+.n3::after{
     content: "kids";
     font-size: 1vw;
     font-weight: 100;
     transform: translateY(-100%);
     display: inline-block;
 }
-.n2::after{
+.n4::after{
     content: "new sunglasses";
     font-size: 1vw;
     font-weight: 100;
     transform: translateY(-100%);
     display: inline-block;
 }
-.n3::after{
+.n1::after{
     content: "roundtangles";
     font-size: 1vw;
     font-weight: 100;
     transform: translateY(-100%);
     display: inline-block;
 }
-.n4::after{
-    content: "";
+.n2::after{
+    content: "vision meets fashion";
+    font-size: 1vw;
+    font-weight: 100;
+    transform: translateY(-100%);
+    display: inline-block;
+}
+.n5::after{
+    content: "future frame";
+    font-size: 1vw;
+    font-weight: 100;
+    transform: translateY(-100%);
+    display: inline-block;
+}
+.n6::after{
+    content: "timeless";
+    font-size: 1vw;
+    font-weight: 100;
+    transform: translateY(-100%);
+    display: inline-block;
+}
+.n7::after{
+    content: "shade eyes in style";
+    font-size: 1vw;
+    font-weight: 100;
+    transform: translateY(-100%);
+    display: inline-block;
+}
+.n8::after{
+    content: "Indulge in Opulence";
+    font-size: 1vw;
+    font-weight: 100;
+    transform: translateY(-100%);
+    display: inline-block;
+}
+.n9::after{
+    content: "new";
     font-size: 1vw;
     font-weight: 100;
     transform: translateY(-100%);
@@ -362,13 +505,38 @@ nav{
     align-items: center;
     transform: translateY(220%);
     overflow: hidden;
+    position: relative;
     opacity: 0;
+    cursor: pointer;
     transition: cubic-bezier(0.215, 0.610, 0.355, 1) .5s;
 }
 .button h4{
     font-size: 1vw;
     color: black;
     padding-bottom: 5px;
+}
+#bcircle{
+    height: 130px;
+    width: 130px;
+    /* background-image: linear-gradient(rgb(237, 163, 51),rgba(237, 163, 51, 0.14)); */
+    background: transparent;
+    backdrop-filter: blur(80px);
+    border-radius: 50px;
+    position: absolute;
+    top: 100%;
+    left: -130%;
+    transition: ease 0.4s;
+    z-index: -99;
+}
+#bh4{
+    transition: ease-in .3s;
+}
+
+.button:hover{
+    #bcircle{
+        top: -30%;
+        left: -20%;
+    }
 }
 
 .elem:hover{
@@ -384,3 +552,221 @@ nav{
         opacity: 1;
     }
 }
+
+#shop{
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    display: flex;
+    padding: 40px;
+    justify-content: space-between;
+}
+#leftshop{
+    height: 100%;
+    width: 45%;
+    overflow: hidden;
+}
+#leftshop img{
+    width: 100%;
+    object-fit: cover;
+    object-position:0%;
+}
+#centershop{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.topic{
+    display: flex ;
+    align-items: center;
+    gap: 10px;
+}
+.topic h3{
+    font-size: 1vw;
+    font-family: regular;
+}
+.dotf{
+    height: 7px;
+    width: 7px;
+    background-color: black;
+    border-radius: 50%;
+}
+.heading h1{
+    font-family: playwrite;
+    font-weight: 100;
+    font-size: 3.3vw;
+}
+.desc p{
+    font-family: avenir;
+    font-weight: 100;
+    padding-bottom: 20px;
+}
+.read{
+    display: flex;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    cursor: pointer;
+}
+#leftread{
+    display: flex;
+    align-items: center;
+    transform: translateX(-18%);
+    transition: ease 0.3s;
+}
+.read i{
+    font-size: 2vw;
+}
+.read h1{
+    font-family: regular;
+    font-weight: 100;
+    font-size: 1.2vw;
+}
+#rightread{
+    transition: ease 0.3s;
+}
+.read:hover{
+    #leftread{
+        transform: translateX(-5%);
+    }
+    #rightread{
+        transform: translateX(100%);
+    }
+}
+#rightshop{
+    height: 50%;
+    width: 25%;
+    overflow: hidden;
+}
+
+#rightshop img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#ads{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    justify-content: end;
+    background-color: white;
+    padding: 40px;
+    gap: 40px;
+}
+
+#ads .video{
+    height: 100%;
+    width: 55%;
+    background-color: black;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.video video{
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.adbanner{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+.adbanner h1{
+    font-family: regular;
+    font-size: 5vw;
+    font-weight: 700;
+}
+.adbanner h2{
+    font-family: regular;
+    font-size: 1.2vw;
+    font-weight: 100;
+}
+
+#window{
+    height: 70vh;
+    width: 100vw;
+    background-color: transparent;
+}
+#footer{
+    height: 40vw;
+    width: 100vw;
+    background-color: #141414;
+    position: fixed;
+    bottom: 0%;
+    z-index: -99;
+}
+#details{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 60px 50px;
+}
+.column{
+    width: 30%;
+    height: 70%;
+}
+.lowcol{
+    display: flex;
+    justify-content: space-between;
+}
+.bar{
+    height: 1px;
+    width: 100%;
+    background-color: #3E3E3E;
+    margin-bottom: 20px;
+}
+.leftcolumn h3{
+    font-size: 0.7vw;
+    font-family: regular;
+    font-weight: 100;
+    color: white;
+    cursor: pointer;
+}
+.rightcolumn{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.rightcolumn h2{
+    font-size: 0.8vw;
+    font-family: regular;
+    font-weight: 100;
+    cursor: pointer;
+    color: white;
+}
+.rightcolumn img{
+    height: 50px;
+    transform: translateY(-20%);
+}
+#foot{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 10px;
+}
+
+#foot h1{
+    font-family: semibold;
+    font-size: 23vw;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    #scroller{
+        display: none;
+    }
+}
+

@@ -710,7 +710,7 @@ nav{
     display: flex;
     align-items: start;
     justify-content: space-between;
-    padding: 60px 50px;
+    padding: 2.3vw 2.9vw;
 }
 .column{
     width: 30%;
